@@ -1,0 +1,72 @@
+using System;
+using System.Windows.Forms;
+
+namespace WindowsFormsApp1
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            label1.Text = "Сейчас посчитаю ваш возраст";
+
+        }
+
+        void button1_Click(object sender, EventArgs e)
+        {
+            textBox3.Text = (Convert.ToInt32(textBox1.Text) - Convert.ToInt32(textBox2.Text)).ToString();
+
+            label1.Text = $"Ваш возраст : {textBox3.Text}";
+
+
+        }
+
+        private void textBox1_Click(object sender, EventArgs e)
+        {
+
+
+
+
+
+            textBox1.Text = $" {MessageBox.Show("Проверьте чтобы поле не было пустым")}";
+            textBox1.Text = "";
+
+
+            if (textBox1.TextLength == 0) button1.Enabled = false;
+
+            else button1.Enabled = true;
+
+
+
+
+
+        }
+
+        private void textBox2_Click(object sender, EventArgs e)
+        {
+
+
+
+            textBox2.Text = $" {MessageBox.Show("Проверьте чтобы поле не было пустым")}";
+            textBox2.Text = "";
+
+
+            if (textBox2.TextLength == 0) button1.Enabled = false;
+
+            else button1.Enabled = true;
+
+
+
+
+
+        }
+
+
+    }
+
+}
+
